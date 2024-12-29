@@ -1,0 +1,28 @@
+.text-box {
+  width: 483px;
+  height: 178px;
+  text-align: left;
+  text-decoration: underline;
+  font: normal normal 800 72px/80px Open Sans;
+  letter-spacing: 0px;
+  color: #000000;
+  transform-origin: bottom left;
+  rotate: 90deg;
+  margin-left: 85px;
+  margin-top: -178px;
+  border-left: black solid;
+  border-width: 16px;
+  padding-left: 113.5px;
+}
+.row>.col{
+  height: 255px;
+  padding: 0px; 
+}
+.row>.col>img{
+  width: 255px;
+  height: 255px;
+  object-fit: cover;
+}
+.row>.col>img:hover{
+  box-shadow: 16px 16px 0px #000000; 
+}
