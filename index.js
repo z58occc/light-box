@@ -11,29 +11,29 @@ const imgSrcs = [
   "./img/jeremy-vessey-oM4uCeXpKSc-unsplash.jpg",
   "./img/erik-mclean-OVWn1sbGIYQ-unsplash.jpg",
   "./img/peter-lloyd-z2AvphP--S0-unsplash.jpg",
-  "./img/jiri-sifalda-ITjiVXcwVng-unsplash.jpg"
-]
+  "./img/jiri-sifalda-ITjiVXcwVng-unsplash.jpg",
+];
 imgs.forEach((img, i) => {
-  img.addEventListener('click', () => {
+  img.addEventListener("click", () => {
     box.style.display = "flex";
-    photoBox.style.background = "transparent  50% 50% no-repeat padding-box "
-    photoBox.style.backgroundImage = `url(${imgSrcs[i]})`
-    photoBox.style.backgroundSize = "cover"
-    photoIndex.innerText = `${i + 1}`
-  })
-})
-close.addEventListener('click', () => {
+    photoBox.style.background = "transparent  50% 50% no-repeat padding-box ";
+    photoBox.style.backgroundImage = `url(${imgSrcs[i]})`;
+    photoBox.style.backgroundSize = "cover";
+    photoIndex.innerText = `${i + 1}`;
+  });
+});
+close.addEventListener("click", () => {
   hide();
-})
-next.addEventListener('click', () => {
+});
+next.addEventListener("click", () => {
   nextPhoto();
-})
-last.addEventListener('click', () => {
+});
+last.addEventListener("click", () => {
   lastPhoto();
-})
+});
 const hide = () => {
   box.style.display = "none";
-}
+};
 
 nextPhoto = () => {
   const backImg = photoBox.style.backgroundImage;
@@ -41,14 +41,12 @@ nextPhoto = () => {
   const nowIndex = imgSrcs.findIndex((imgSrc) => imgSrc === match[1]);
   if (nowIndex !== 5) {
     photoBox.style.backgroundImage = `url(${imgSrcs[nowIndex + 1]})`;
-    photoIndex.innerText = `${nowIndex + 2}`
-
+    photoIndex.innerText = `${nowIndex + 2}`;
   } else {
     photoBox.style.backgroundImage = `url(${imgSrcs[0]})`;
-    photoIndex.innerText = '1'
-
+    photoIndex.innerText = "1";
   }
-}
+};
 lastPhoto = () => {
   const backImg = photoBox.style.backgroundImage;
   const match = backImg.match(/"([^"]*)"/);
@@ -58,8 +56,6 @@ lastPhoto = () => {
     photoIndex.innerText = `${nowIndex}`;
   } else {
     photoBox.style.backgroundImage = `url(${imgSrcs[5]})`;
-    photoIndex.innerText = '6';
-
+    photoIndex.innerText = "6";
   }
-}
-
+};
