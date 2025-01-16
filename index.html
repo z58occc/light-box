@@ -25,12 +25,17 @@
 </head>
 
 <body>
-  <div class="">
-
-    <div class="body d-flex" style="
+  <div class="body d-flex" style="
     position: relative;
     ">
-      <div class="box" style="
+    <!-- 遮罩4個0張到最大
+     遮罩高度由同層元素決定（父元素 被.photo-wall撐大 遮罩的高度取決於父元素
+     然後用margin把photo-wall撐大 讓遮罩的高度可以遮蔽整個視窗
+     height:100% or 100vh會讓遮罩沒辦法隨著photo-wall伸縮
+     不設定100% 遮罩的高度不夠 所以採用上面的方法
+     ）
+    -->
+    <div class="box" style=" 
         position: absolute;
         top: 0;
         bottom: 0;
@@ -40,89 +45,86 @@
         background-color: rgb(0, 0, 0,0.9) ;
         display: none;
                   ">
-        <div class="mask row g-0"
-        style="width: 100%;"
-        >
-          <div class="mask-left col " style="margin-left: 85px;
+      <div class="mask row g-0" style="width: 100%;">
+        <div class="mask-left col " style="margin-left: 85px;
             margin-right: 72px;">
-            <div class="numberBox d-flex">
-              <div class="photoIndex" style="width: 41px;
+          <div class="numberBox d-flex">
+            <div class="photoIndex" style="width: 41px;
                             height: 98px;
                             font: normal normal bold 72px/72px Open Sans;
                             letter-spacing: 0px;
                             color: #FFFFFF;
                             "></div>
-              <div style="width: 34px;
+            <div style="width: 34px;
                             height: 49px;
                             font: normal normal normal 36px/36px Open Sans;
                             letter-spacing: 0px;
                             color: #FFFFFF;
                             margin-top: 52.5px;
                             ">/6</div>
-            </div>
-            <div class="textBox">
-              <div class="up" style="text-align: left;
+          </div>
+          <div class="textBox">
+            <div class="up" style="text-align: left;
                 font: normal normal bold 22px/36px Open Sans;
                 letter-spacing: 0px;
                 color: #FFFFFF;
                 margin-top: 333px;
                 ">Have you ever seen the cute fox before?</div>
-              <div class="down" style="font: italic normal bold 16px/24px Open Sans;
+            <div class="down" style="font: italic normal bold 16px/24px Open Sans;
                 letter-spacing: 0px;
                 color: #FFFFFF;
                 margin-top: 24px;
                 ">—Erik Mclean</div>
-            </div>
           </div>
-          <div class="photoBox col-md-8">
-            <i class="close bi bi-x-circle-fill" style="font-size: 25px;
+        </div>
+        <div class="photoBox col-md-8">
+          <i class="close bi bi-x-circle-fill" style="font-size: 25px;
                 color: #FFFFFF;
                 position: absolute;
                 right: 6px;
                 cursor: pointer;
                 "></i>
-            <i class="next bi bi-chevron-right" style="font-size: 30px;
+          <i class="next bi bi-chevron-right" style="font-size: 30px;
                 color: white;
                 position: absolute;
                 right: 16px;
                 top:calc(50% - 16px);"></i>
-            <i class="last bi bi-chevron-left" style="font-size: 30px;
+          <i class="last bi bi-chevron-left" style="font-size: 30px;
                 color: white;
                 position: absolute;
                 left: 16px;
                 top:calc(50% - 16px);"></i>
-          </div>
         </div>
       </div>
-      <div class="text-box">
-        FOX EVERYWHERE
-      </div>
-      <div class="photo-wall" >
-        <div class="row g-0" style="margin-top: 129px;
+    </div>
+    <div class="text-box">
+      FOX EVERYWHERE
+    </div>
+    <div class="photo-wall">
+      <div class="row g-0" style="margin-top: 129px;
         margin-bottom: 150px;
           gap: 30px;">
-          <div class="col ">
-            <img src="./img/erik-mclean-TNjdgCBRMeU-unsplash.jpg" alt="">
-          </div>
-          <div class="col">
-            <img src="./img/jeremy-vessey-lRwGMe1MFj4-unsplash.jpg" alt="">
-          </div>
-          <div class="col">
-            <img src="./img/jeremy-vessey-oM4uCeXpKSc-unsplash.jpg" alt="">
-          </div>
-          <div class="col">
-            <img src="./img/erik-mclean-OVWn1sbGIYQ-unsplash.jpg" alt="">
-          </div>
-          <div class="col">
-            <img src="./img/peter-lloyd-z2AvphP--S0-unsplash.jpg" alt="">
-          </div>
-          <div class="col">
-            <img src="./img/jiri-sifalda-ITjiVXcwVng-unsplash.jpg" alt="">
-          </div>
+        <div class="col ">
+          <img src="./img/erik-mclean-TNjdgCBRMeU-unsplash.jpg" alt="">
+        </div>
+        <div class="col">
+          <img src="./img/jeremy-vessey-lRwGMe1MFj4-unsplash.jpg" alt="">
+        </div>
+        <div class="col">
+          <img src="./img/jeremy-vessey-oM4uCeXpKSc-unsplash.jpg" alt="">
+        </div>
+        <div class="col">
+          <img src="./img/erik-mclean-OVWn1sbGIYQ-unsplash.jpg" alt="">
+        </div>
+        <div class="col">
+          <img src="./img/peter-lloyd-z2AvphP--S0-unsplash.jpg" alt="">
+        </div>
+        <div class="col">
+          <img src="./img/jiri-sifalda-ITjiVXcwVng-unsplash.jpg" alt="">
         </div>
       </div>
-
     </div>
+
   </div>
   <script src="index.js"></script>
 </body>

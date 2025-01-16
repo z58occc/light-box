@@ -38,11 +38,13 @@ const hide = () => {
 nextPhoto = () => {
   const backImg = photoBox.style.backgroundImage;
   const match = backImg.match(/"([^"]*)"/);
+  // 用正規表達式擷取底圖src字串
   const nowIndex = imgSrcs.findIndex((imgSrc) => imgSrc === match[1]);
-  if (nowIndex !== 5) {
+  // 擷取後去對比是哪一張圖 抓索引
+  if (nowIndex !== 5) {// 不是最後一張就下一張
     photoBox.style.backgroundImage = `url(${imgSrcs[nowIndex + 1]})`;
     photoIndex.innerText = `${nowIndex + 2}`;
-  } else {
+  } else {// 是最後一張回到第一張
     photoBox.style.backgroundImage = `url(${imgSrcs[0]})`;
     photoIndex.innerText = "1";
   }
@@ -51,10 +53,10 @@ lastPhoto = () => {
   const backImg = photoBox.style.backgroundImage;
   const match = backImg.match(/"([^"]*)"/);
   const nowIndex = imgSrcs.findIndex((imgSrc) => imgSrc === match[1]);
-  if (nowIndex !== 0) {
+  if (nowIndex !== 0) {// 不是第一張就上一張
     photoBox.style.backgroundImage = `url(${imgSrcs[nowIndex - 1]})`;
     photoIndex.innerText = `${nowIndex}`;
-  } else {
+  } else {// 是第一張就回到最後一張;
     photoBox.style.backgroundImage = `url(${imgSrcs[5]})`;
     photoIndex.innerText = "6";
   }
