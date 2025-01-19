@@ -35,8 +35,8 @@
      不設定100% 遮罩的高度不夠 所以採用上面的方法
      ）
     -->
-    <div class="box" style=" 
-        position: absolute;
+    <div class="box"  style=" 
+        position: fixed;
         top: 0;
         bottom: 0;
         right: 0;
@@ -45,6 +45,7 @@
         background-color: rgb(0, 0, 0,0.9) ;
         display: none;
                   ">
+                  <!--position: fixed;固定遮罩 解決高度伸縮問題  -->
       <div class="mask row g-0" style="width: 100%;">
         <div class="mask-left col " style="margin-left: 85px;
             margin-right: 72px;">
